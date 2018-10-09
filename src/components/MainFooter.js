@@ -9,9 +9,6 @@ class MainFooter extends React.Component{
                     <Col sm={10} md={10} lg={10}>
                         <h5>&copy; 2016 Cashmart Payday Loan Inc. All Rights Reserved.</h5>
                     </Col>
-                    <Col sm={10} md={10} lg={10}>
-                        <h4>Always there for help</h4>
-                    </Col>
                     <Col sm={24} md={24} lg={24}>
                         <p>
                         Free $200.00 loan offer valid for the customer's first payday loan. Offer only applies to the loan fees on a $200.00 loan;
