@@ -28,21 +28,21 @@ class HomeHeader extends React.Component{
                         <Col sm={24} md={6} lg={3}>
                             <Menu.Item key="1">
                                 <Dropdown overlay={headerMenu}>
-                                    <a className="ant-dropdown-link" href="#">Payday Loan</a>
+                                    <a className="ant-dropdown-link">Payday Loan</a>
                                 </Dropdown>
                             </Menu.Item>
                         </Col>
                         <Col sm={24} md={6} lg={3}>
                             <Menu.Item key="2">
                                 <Dropdown overlay={headerMenu}>
-                                    <a className="ant-dropdown-link" href="#">Cheque Cashing</a>
+                                    <a className="ant-dropdown-link">Cheque Cashing</a>
                                 </Dropdown>
                             </Menu.Item>
                         </Col>
                         <Col sm={24} md={6} lg={3}>
                             <Menu.Item key="3">
                                 <Dropdown overlay={headerMenu}>
-                                    <a className="ant-dropdown-link" href="#">Western Union</a>
+                                    <a className="ant-dropdown-link">Western Union</a>
                                 </Dropdown>
                             </Menu.Item>
                         </Col>

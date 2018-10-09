@@ -47,8 +47,9 @@
   background-color: #eeeeee;
 }
 
-.homeBackground {
+.homeBackground{
   background-image: url('./source/accounting-alone-application-938965.jpg');
   background-size: cover;
   height: 35em;
+  text-align: center;
 }
