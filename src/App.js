@@ -3,6 +3,7 @@ import { Layout, Menu, Icon, Dropdown, Button, Carousel} from 'antd';
 import HomeHeader from './components/HomeHeader';
 import HomeContent from './components/HomeContent';
 import MainFooter from './components/MainFooter';
+import LoanContent from './components/LoanContent';
 import './App.css';
 
 class App extends React.Component{
@@ -14,6 +15,7 @@ class App extends React.Component{
             <HomeHeader />
           </Header>
           <HomeContent />
+          <LoanContent />
           <Footer>
             <MainFooter />
           </Footer>
