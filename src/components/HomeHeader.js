@@ -12,7 +12,7 @@ class HomeHeader extends React.Component{
                 <Link to="/Loans">Loans</Link>
               </Menu.Item>
               <Menu.Item>
-                <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">2nd menu item</a>
+                <Link to="/Rates">Rates</Link>
               </Menu.Item>
               <Menu.Item>
                 <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">3rd menu item</a>

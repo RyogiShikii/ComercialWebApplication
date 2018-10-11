@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Layout, Menu, Icon, Dropdown, Button, Carousel} from 'antd';
+import { Layout} from 'antd';
 import HomeHeader from './components/HomeHeader';
 import HomeContent from './components/HomeContent';
 import MainFooter from './components/MainFooter';
 import LoanContent from './components/LoanContent';
+import LoanCalculator from './components/LoanCalculator';
 import './App.css';
 
 class App extends React.Component {
@@ -18,6 +19,7 @@ class App extends React.Component {
           </Header>
           <Route exact path="/" component={HomeContent} />
           <Route path="/loans" component={LoanContent} />
+          <Route path="/Rates" component={LoanCalculator} />
           <Footer>
             <MainFooter />
           </Footer>
