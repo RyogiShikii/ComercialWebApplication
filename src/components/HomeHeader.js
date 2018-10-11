@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {Menu, Dropdown} from 'antd';
 import {Row, Col} from 'antd';
 
@@ -8,7 +9,7 @@ class HomeHeader extends React.Component{
         const headerMenu = (
             <Menu>
               <Menu.Item>
-                <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">1st menu item</a>
+                <Link to="/Loans">Loans</Link>
               </Menu.Item>
               <Menu.Item>
                 <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">2nd menu item</a>

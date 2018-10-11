@@ -4,20 +4,42 @@ import {Layout, Row, Col, Avatar, List, Card, Icon, Button} from 'antd';
 class LoanContent extends React.Component{
     render() {
         const {Content} = Layout;
-        const data = [
+        const infoData = [
             {
-              title: 'Ant Design Title 1',
+                title: 'Basic Info',
+                description: 'A Payday Loan is a small sum loan, typically for a few hundred dollars to be repaid after a short period of time-usually,which can be a useful way to meet temporary short-term borrowing needs'
             },
             {
-              title: 'Ant Design Title 2',
+                title: 'Loan Terms',
+                description: '2 to 62 days'
             },
             {
-              title: 'Ant Design Title 3',
+                title: 'Loan Amount',
+                description: 'up to $1500'
             },
             {
-              title: 'Ant Design Title 4',
+                title: 'Payback Flexibility',
+                description: 'single payment(multiple payments only in BC)'
             },
           ];
+        const qulificationData = [
+            {
+                title: 'You must be 19 years or older',
+                description: ''
+            },
+            {
+                title: 'A valid government issued ID',
+                description: 'such as Drivers license, Passport and PR card etc.'
+            },
+            {
+                title: 'Up-to-date bank statement',
+                description: 'we need at least one month transactions history from the bank statement you provide'
+            },
+            {
+                title: 'A void cheque or Pre-Authorized Debit Form',
+                description: 'This document should show all your bank account infomation'
+            },
+        ];
         return (
             <Content>
                 <Row type="flex" justify='center'>
@@ -31,16 +53,16 @@ class LoanContent extends React.Component{
                 <Row type="flex" justify='space-around'>
                     <Col sm={16} md={16} lg={8}>
                         <List
-                            header={<h3>What do I need to apply</h3>}
+                            header={<h3>What is a Payday Loan</h3>}
                             bordered={true}
                             itemLayout="horizontal"
-                            dataSource={data}
+                            dataSource={infoData}
                             renderItem={item => (
                                 <List.Item>
                                     <List.Item.Meta
                                         avatar={<Avatar icon='star'></Avatar>}
                                         title={<p>{item.title}</p>}
-                                        description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                                        description={<p>{item.description}</p>}
                                     />
                                 </List.Item>
                             )}
@@ -51,13 +73,13 @@ class LoanContent extends React.Component{
                             header={<h3>What do I need to apply</h3>}
                             bordered={true}
                             itemLayout="horizontal"
-                            dataSource={data}
+                            dataSource={qulificationData}
                             renderItem={item => (
                                 <List.Item>
                                     <List.Item.Meta
                                         avatar={<Avatar icon='star'></Avatar>}
                                         title={<p>{item.title}</p>}
-                                        description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                                        description={<p>{item.description}</p>}
                                     />
                                 </List.Item>
                             )}
