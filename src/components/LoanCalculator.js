@@ -1,5 +1,5 @@
 import React from 'react';
-import {Layout, Row, Col, Select, Avatar, List, Card, Icon, Button, Table} from 'antd';
+import {Layout, Row, Col, Select, Form, Input, Checkbox, Icon, Button, Table} from 'antd';
 
 class LoanCalculator extends React.Component {
     constructor(props){
@@ -12,13 +12,15 @@ class LoanCalculator extends React.Component {
         this.handleOnChange = this.handleOnChange.bind(this);
     }
 
-    handleOnChange(event){
-        
+    handleOnChange(value){
+        this.setState({mainSoure:value});
     }
 
     render() {
+        const { getFieldDecorator } = this.props.form;
         const {Content} = Layout;
         const Option = Select.Option;
+        const FormItem = Form.Item;
         const columnPdl = [
             {
                 title:'Loan Amount',
@@ -128,12 +130,47 @@ class LoanCalculator extends React.Component {
             <Content>
                 <Row type="flex" justify="space-around">
                     <Col sm={24} md={24} lg={18}>
-                        <Select onChange={this.handleOnChange} style={{ width: 120 }}>
-                            <Option value='great'>employed</Option>
-                            <Option value='good'>Canada pention Plan</Option>
-                            <Option value='decent'>Employed Insurance</Option>
-                            <Option value='improve'>Others</Option>
-                        </Select>
+                        <Form onSubmit={this.handleSubmit} className="login-form">
+                            <FormItem>
+                            {getFieldDecorator('userName', {
+                                rules: [{ required: true, message: 'Please input your username!' }],
+                            })(
+                                <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+                            )}
+                            </FormItem>
+                            <FormItem>
+                            {getFieldDecorator('password', {
+                                rules: [{ required: true, message: 'Please input your Password!' }],
+                            })(
+                                <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+                            )}
+                            </FormItem>
+                            <FormItem>
+                            {getFieldDecorator('city', {
+                                rules: [{ required: true, message: 'Please input your city' }],
+                            })(
+                                <Select onChange={this.handleOnChange} style={{ width: 120 }} placeholder='please select your main income source'>
+                                <Option value='great'>employed</Option>
+                                <Option value='good'>Canada pention Plan</Option>
+                                <Option value='decent'>Employed Insurance</Option>
+                                <Option value='improve'>Others</Option>
+                                </Select>
+                            )}
+                            </FormItem>
+                            <FormItem>
+                            {getFieldDecorator('remember', {
+                                valuePropName: 'checked',
+                                initialValue: true,
+                            })(
+                                <Checkbox>Remember me</Checkbox>
+                            )}
+                            <a className="login-form-forgot" href="">Forgot password</a>
+                            <Button type="primary" htmlType="submit" className="login-form-button">
+                                Log in
+                            </Button>
+                            Or <a href="">register now!</a>
+                            </FormItem>
+                        </Form>
                     </Col>
                 </Row>
                 <Row type="flex" justify="space-around">
@@ -147,4 +184,5 @@ class LoanCalculator extends React.Component {
     }
 }
 
-export default LoanCalculator;
+const Calculator = Form.create()(LoanCalculator);
+export default Calculator;
