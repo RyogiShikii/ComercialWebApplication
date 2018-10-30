@@ -12,6 +12,15 @@ class LoanCalculator extends React.Component {
         this.handleOnChange = this.handleOnChange.bind(this);
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.form.validateFields((err, values) => {
+          if (!err) {
+            console.log('Received values of form: ', values);
+          }
+        });
+    }
+
     handleOnChange(value){
         this.setState({mainSoure:value});
     }
@@ -129,48 +138,53 @@ class LoanCalculator extends React.Component {
         return (
             <Content>
                 <Row type="flex" justify="space-around">
-                    <Col sm={24} md={24} lg={18}>
-                        <Form onSubmit={this.handleSubmit} className="login-form">
+                    <Col sm={24} md={24} lg={10}>
+                        <h4>Payday Loan Eligibility Calculator</h4>
+                        <Form onSubmit={this.handleSubmit} className="calculator-form">
                             <FormItem>
-                            {getFieldDecorator('userName', {
-                                rules: [{ required: true, message: 'Please input your username!' }],
+                            {getFieldDecorator('mainsource', {
+                                rules: [{ required: true, message: 'Please select your employment status' }],
                             })(
-                                <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
-                            )}
-                            </FormItem>
-                            <FormItem>
-                            {getFieldDecorator('password', {
-                                rules: [{ required: true, message: 'Please input your Password!' }],
-                            })(
-                                <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
-                            )}
-                            </FormItem>
-                            <FormItem>
-                            {getFieldDecorator('city', {
-                                rules: [{ required: true, message: 'Please input your city' }],
-                            })(
-                                <Select onChange={this.handleOnChange} style={{ width: 120 }} placeholder='please select your main income source'>
-                                <Option value='great'>employed</Option>
-                                <Option value='good'>Canada pention Plan</Option>
-                                <Option value='decent'>Employed Insurance</Option>
+                                <Select onChange={this.handleOnChange} placeholder='please select your employment status'>
+                                <Option value='great'>I'm employed by a company</Option>
+                                <Option value='good'>I'm retired and have Canada pention Plan</Option>
+                                <Option value='decent'>I'm on Employed Insurance currently</Option>
                                 <Option value='improve'>Others</Option>
                                 </Select>
                             )}
                             </FormItem>
                             <FormItem>
-                            {getFieldDecorator('remember', {
-                                valuePropName: 'checked',
-                                initialValue: true,
+                            {getFieldDecorator('amount', {
+                                rules: [{ required: true, message: 'Please select your average income amount' }],
                             })(
-                                <Checkbox>Remember me</Checkbox>
+                                <Select onChange={this.handleOnChange} placeholder='please select your average income amount every two weeks'>
+                                <Option value='great'>less than 1000</Option>
+                                <Option value='good'>1000-1500</Option>
+                                <Option value='decent'>1500-2000</Option>
+                                <Option value='improve'>2000+</Option>
+                                </Select>
                             )}
-                            <a className="login-form-forgot" href="">Forgot password</a>
+                            </FormItem>
+                            <FormItem>
+                            {getFieldDecorator('status', {
+                                rules: [{ required: true, message: 'Please select your loan status' }],
+                            })(
+                                <Select onChange={this.handleOnChange} placeholder='please select if you have loan with other company'>
+                                <Option value='great'>Yes,I have loan with other comany</Option>
+                                <Option value='good'>No, this is my first Payday Loan</Option>
+                                </Select>
+                            )}
+                            </FormItem>
+                            <FormItem>
                             <Button type="primary" htmlType="submit" className="login-form-button">
-                                Log in
+                                Calculate
                             </Button>
-                            Or <a href="">register now!</a>
+                            <a className="login-form-forgot" href="">Need more?Try personal solution</a>
                             </FormItem>
                         </Form>
+                    </Col>
+                    <Col sm={24} md={24} lg={8}>
+                        there will be a table
                     </Col>
                 </Row>
                 <Row type="flex" justify="space-around">
