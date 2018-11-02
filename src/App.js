@@ -6,6 +6,7 @@ import HomeContent from './components/HomeContent';
 import MainFooter from './components/MainFooter';
 import LoanContent from './components/LoanContent';
 import LoanCalculator from './components/LoanCalculator';
+import FAQ from './components/FAQ'; 
 import './App.css';
 
 class App extends React.Component {
@@ -20,6 +21,7 @@ class App extends React.Component {
           <Route exact path="/" component={HomeContent} />
           <Route path="/loans" component={LoanContent} />
           <Route path="/Rates" component={LoanCalculator} />
+          <Route path='/FAQs' component={FAQ} />
           <Footer>
             <MainFooter />
           </Footer>

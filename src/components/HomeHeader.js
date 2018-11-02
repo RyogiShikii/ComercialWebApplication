@@ -15,7 +15,7 @@ class HomeHeader extends React.Component{
                 <Link to="/Rates">Rates</Link>
               </Menu.Item>
               <Menu.Item>
-                <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">3rd menu item</a>
+                <Link to='/FAQs'>FAQs</Link>
               </Menu.Item>
             </Menu>
           );
