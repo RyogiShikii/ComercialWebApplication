@@ -53,3 +53,15 @@
   height: 35em;
   text-align: center;
 }
+/*
+below is the css for FAQs
+*/
+
+.collapseHolder{
+  margin-top:2em;
+  margin-bottom:4em;
+}
+
+.collapseHolder h2{
+  color:red;
+}

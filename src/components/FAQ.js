@@ -24,10 +24,11 @@ class FAQ extends React.Component {
         ));
         return (
             <Row type="flex" justify="space-around">
-                <Col sm={24} md={24} lg={20}>
-                <Collapse accordion>
-                    {collapse}
-                </Collapse>
+                <Col sm={24} md={24} lg={20} className='collapseHolder'>
+                    <h2>Still have questions about our services?</h2>
+                    <Collapse accordion>
+                        {collapse}
+                    </Collapse>
                 </Col>
             </Row>
         );
