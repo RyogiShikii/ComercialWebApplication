@@ -65,3 +65,15 @@ below is the css for FAQs
 .collapseHolder h2{
   color:red;
 }
+
+/*
+below is the css for Login component
+*/
+.LoginRow{
+  background-image: url('./source/abstract-attractive-backdrop-988872.jpg');
+  background-size:cover;
+}
+
+.LoginForm{
+  margin:5em;
+}
