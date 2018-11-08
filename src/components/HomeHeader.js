@@ -26,7 +26,7 @@ class HomeHeader extends React.Component{
                 <Link to="/Login">Register</Link>
               </Menu.Item>
               <Menu.Item>
-                <Link to="/Rates">Rates</Link>
+                <Link to="/Apply">Apply</Link>
               </Menu.Item>
               <Menu.Item>
                 <Link to='/FAQs'>FAQs</Link>
