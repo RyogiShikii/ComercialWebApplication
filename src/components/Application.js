@@ -113,10 +113,45 @@ class Application extends React.Component {
         return (
             <Content>
                 <Row type="flex" justify="space-around">
-                    <Col sm={22} md={22} lg={16}>
+                    <Col sm={24} md={24} lg={16}>
                         <Form onSubmit={this.handleSubmit}>
                             <Collapse defaultActiveKey={['1']}>
-                                    <Panel header="This is panel header 1" key="1">
+                                    <Panel header="Personal Infomation" key="1">
+                                        <Row gutter={8}>
+                                            <Col sm={24} md={24} lg={8}>
+                                                <FormItem label="Last Name">
+                                                    {getFieldDecorator('lastName', {
+                                                        rules: [{
+                                                        required: true, message: 'Please input your last name',
+                                                        }],
+                                                    })(
+                                                        <Input />
+                                                    )}
+                                                </FormItem>
+                                            </Col>
+                                            <Col sm={24} md={24} lg={8}>
+                                                <FormItem label="First Name">
+                                                    {getFieldDecorator('firstName', {
+                                                        rules: [{
+                                                        required: true, message: 'Please input your first name',
+                                                        }],
+                                                    })(
+                                                        <Input />
+                                                    )}
+                                                </FormItem>
+                                            </Col>
+                                            <Col sm={24} md={24} lg={8}>
+                                                <FormItem label="Birth Day">
+                                                    {getFieldDecorator('birthDay', {
+                                                        rules: [{
+                                                        required: true, message: 'Please input your birth day'
+                                                        }],
+                                                    })(
+                                                        <Input placeholder='YYYY-MM-DD'/>
+                                                    )}
+                                                </FormItem>
+                                            </Col>
+                                        </Row>
                                         <FormItem label="E-mail">
                                             {getFieldDecorator('email', {
                                                 rules: [{
@@ -125,37 +160,38 @@ class Application extends React.Component {
                                                 required: true, message: 'Please input your E-mail!',
                                                 }],
                                             })(
-                                                <Input />
+                                                <Input/>
                                             )}
                                         </FormItem>
-                                    <FormItem
-                                    label="Password"
-                                    >
-                                    {getFieldDecorator('password', {
-                                        rules: [{
-                                        required: true, message: 'Please input your password!',
-                                        }, {
-                                        validator: this.validateToNextPassword,
-                                        }],
-                                    })(
-                                        <Input type="password" />
-                                    )}
-                                    </FormItem>
+                                        <FormItem label="Password">
+                                            {getFieldDecorator('password', {
+                                                rules: [{
+                                                required: true, message: 'Please input your password!',
+                                                }, {
+                                                validator: this.validateToNextPassword,
+                                                }],
+                                            })(
+                                                <Input type="password" />
+                                            )}
+                                        </FormItem>
+                                        <FormItem label="Confirm Password">
+                                            {getFieldDecorator('confirm', {
+                                                rules: [{
+                                                required: true, message: 'Please confirm your password!',
+                                                }, {
+                                                validator: this.compareToFirstPassword,
+                                                }],
+                                            })(
+                                                <Input type="password" onBlur={this.handleConfirmBlur} />
+                                            )}
+                                        </FormItem>
+                                        <FormItem label='Register me a account'>
+                                            {getFieldDecorator('register')(
+                                                <Checkbox>I have read the <a href="">agreement</a></Checkbox>
+                                            )}
+                                        </FormItem>
                                     </Panel>
-                                    <Panel header="This is panel header 2" key="2">
-                                    <FormItem
-                                    label="Confirm Password"
-                                    >
-                                    {getFieldDecorator('confirm', {
-                                        rules: [{
-                                        required: true, message: 'Please confirm your password!',
-                                        }, {
-                                        validator: this.compareToFirstPassword,
-                                        }],
-                                    })(
-                                        <Input type="password" onBlur={this.handleConfirmBlur} />
-                                    )}
-                                    </FormItem>
+                                    <Panel header="Employment Information" key="2">
                                     <FormItem
                                     label={(
                                         <span>
@@ -207,7 +243,7 @@ class Application extends React.Component {
                                     )}
                                     </FormItem>
                                     </Panel>
-                                    <Panel header="This is panel header 3" key="3">
+                                    <Panel header="Bank Infomation" key="3">
                                     <FormItem
                                     label="Captcha"
                                     extra="We must make sure that your are a human."
