@@ -54,7 +54,7 @@
   text-align: center;
 }
 /*
-below is the css for FAQs
+below is the css for FAQs component
 */
 
 .collapseHolder{
@@ -76,4 +76,12 @@ below is the css for Login component
 
 .LoginForm{
   margin:5em;
+}
+
+/*
+below is the css for Apllication component
+*/
+.apllicationForm{
+  background-image: url('./source/login-background.jpg');
+  background-size:cover;
 }
