@@ -29,7 +29,7 @@ class HomeHeader extends React.Component{
                 <Link to="/Apply">Apply</Link>
               </Menu.Item>
               <Menu.Item>
-                <Link to='/FAQs'>FAQs</Link>
+                <Link to='/Location'>Location</Link>
               </Menu.Item>
             </Menu>
           );

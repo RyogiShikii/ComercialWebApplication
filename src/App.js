@@ -9,6 +9,7 @@ import LoanCalculator from './components/LoanCalculator';
 import FAQ from './components/FAQ'; 
 import Login from './components/Login';
 import Application from './components/Application';
+import DirectionMap from './components/DirectionMap';
 import './App.css';
 
 class App extends React.Component {
@@ -26,6 +27,7 @@ class App extends React.Component {
           <Route path='/FAQs' component={FAQ} />
           <Route path='/Login' component={Login} />
           <Route path='/Apply' component={Application} />
+          <Route path='/Location' component={DirectionMap} />
           <Footer>
             <MainFooter />
           </Footer>
