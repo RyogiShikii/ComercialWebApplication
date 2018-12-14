@@ -81,18 +81,12 @@ class Application extends React.Component {
         return (
             <Content>
                 <Row type="flex" justify="space-around" className='apllicationForm'>
-                    <Col sm={24} md={24} lg={16}>
+                    <Col sm={24} md={24} lg={22}>
                         <Form onSubmit={this.handleSubmit}>
                             <Collapse defaultActiveKey={['1']}>
                                 <Panel header="Personal Infomation" key="1">
                                     <Row gutter={8}>
                                         <Col sm={24} md={24} lg={8}>
-                                        <Select defaultValue="lucy">
-                                        <Option value="jack">Jack</Option>
-                                        <Option value="lucy">Lucy</Option>
-                                        <Option value="disabled" disabled>Disabled</Option>
-                                        <Option value="Yiminghe">yiminghe</Option>
-                                        </Select>
                                             <FormItem label="Last Name">
                                                 {getFieldDecorator('lastName', {
                                                     rules: [{
