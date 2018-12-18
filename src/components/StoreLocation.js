@@ -9,9 +9,10 @@ class StoreLocation extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            city:'surrey',
+            city:'0',
             directions:undefined,
-            input:undefined
+            input:undefined,
+            isCityChange:false
         }
         this.handleCityChange = this.handleCityChange.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -20,7 +21,8 @@ class StoreLocation extends React.Component{
 
     handleCityChange(value){
         this.setState({
-            city:value
+            city:value,
+            isCityChange:true
         });
     }
 
@@ -30,8 +32,11 @@ class StoreLocation extends React.Component{
     }
 
     handleDirection(){
+        this.setState({
+            isCityChange:false
+        })
         const input = this.state.input;
-        const des = (this.state.city == 'vancouver')? '2245 commercial drive,vancouver,bc' : '10392 king george blvd,surrey,bc';
+        const des = (this.state.city == '1')? '2245 commercial drive,vancouver,bc' : '10392 king george blvd,surrey,bc';
         const DirectionsService = new maps.DirectionsService();
         DirectionsService.route({
             origin:input,
@@ -39,7 +44,9 @@ class StoreLocation extends React.Component{
             travelMode: maps.TravelMode.DRIVING
         },(result,status) => {
             if(status === maps.DirectionsStatus.OK){
-                this.setState({directions:result})
+                this.setState({
+                    directions:result
+                })
             }else{
                 console.log('error')
             }
@@ -50,21 +57,37 @@ class StoreLocation extends React.Component{
         const {Content} = Layout;
         const Option = Select.Option;
         const city = this.state.city;
+        const isCityChange = this.state.isCityChange;
+        const cityInfo = [
+            {
+                'city':'surrey',
+                'latlng':{lat: 49.191362, lng:-122.844795},
+                'name':'CashMart Surrey',
+                'address':'10392 King George Blvd, Surrey, BC'
+            },
+            {
+                'city':'vancouver',
+                'latlng':{lat: 49.264435,lng: -123.069900},
+                'name':'CashMart Vancouver',
+                'address':'2245 Commercial Drive,Vancouver,BC'
+            }
+        ];
         let map;
-        if(city == 'vancouver'){
+        if(!isCityChange){
+            const latlng = (cityInfo[city].city == 'surrey')? {lat: 49.191362, lng:-122.844795} : {lat: 49.264435,lng: -123.069900}
             map = (
                         <MapWrapper
                             loadingElement={<div style={{ height: `100%` }} />}
                             containerElement={<div style={{ height: `25em` }} />}
                             mapElement={<div style={{ height: `100%` }} />}
                             defaultZoom={18}
-                            defaultCenter = {{lat: 49.264435,lng: -123.069900}}
+                            defaultCenter = {latlng}
                         >
-                            <Marker position={{ lat: 49.264435, lng: -123.069900 }}>
+                            <Marker position={latlng}>
                                 <InfoWindow>
                                     <div>
-                                        <h4>CashMart Surrey</h4>
-                                        <p>2245 Commercial Drive,Vancouver,BC</p>
+                                        <h4>{cityInfo[city].name}</h4>
+                                        <p>{cityInfo[city].address}</p>
                                     </div>
                                 </InfoWindow>
                             </Marker>
@@ -72,35 +95,34 @@ class StoreLocation extends React.Component{
                         </MapWrapper>
             )
         }else{
+            const latlng = (cityInfo[city].city == 'surrey')? {lat: 49.191362, lng:-122.844795} : {lat: 49.264435,lng: -123.069900}
             map = (
                 <MapWrapper
                     loadingElement={<div style={{ height: `100%` }} />}
                     containerElement={<div style={{ height: `25em` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
                     defaultZoom={16}
-                    defaultCenter={{lat: 49.191362, lng:-122.844795}}
+                    defaultCenter={latlng}
                 >
-                    <Marker position={{ lat: 49.191362, lng: -122.844795 }}>
+                    <Marker position={latlng}>
                         <InfoWindow>
                             <div>
-                                <h4>CashMart Surrey</h4>
-                                <p>10392 King George Blvd, Surrey, BC</p>
+                                <h4>{cityInfo[city].name}</h4>
+                                <p>{cityInfo[city].address}</p>
                             </div>
                         </InfoWindow>
                     </Marker>
-                    <DirectionsRenderer directions={this.state.directions}></DirectionsRenderer>
                 </MapWrapper>
             )
         }
-
         return (
             <Content>
                 <Row type="flex" justify="space-around">
                         <Col xs={24} sm={24} md={24} lg={5}>
                         <h2>Please Select Your City:</h2>
                         <Select defaultValue="surrey" style={{width:'18em'}} onChange={this.handleCityChange}> 
-                            <Option value="surrey">Surrey</Option>
-                            <Option value="vancouver">Vancouver</Option>
+                            <Option value="0">Surrey</Option>
+                            <Option value="1">Vancouver</Option>
                         </Select>
                         <br/>
                         <Input placeholder='please input your postcode or address' onChange={this.handleInput}></Input>
