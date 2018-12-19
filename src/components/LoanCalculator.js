@@ -5,24 +5,39 @@ class LoanCalculator extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            frequency:'',
+            employmentStatus:'',
             netPay:'',
-            mainSoure:''
+            history:''
         }
-        this.handleOnChange = this.handleOnChange.bind(this);
+        this.handleEmploymentStatus = this.handleEmploymentStatus.bind(this);
+        this.handleNetPay = this.handleNetPay.bind(this);
+        this.handleHistory = this.handleHistory.bind(this);
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
           if (!err) {
-            console.log('Received values of form: ', values);
+            const {employmentStatus,netPay,history} = this.state;
+            const tem = [employmentStatus,netPay,history];
+            const score = tem.map(item => {
+                return parseInt(item)
+            });
+            //import lodash sum here
           }
         });
     }
 
-    handleOnChange(value){
-        this.setState({mainSoure:value});
+    handleEmploymentStatus(value){
+        this.setState({employmentStatus:value});
+    }
+
+    handleNetPay(value){
+        this.setState({netPay:value});
+    }
+
+    handleHistory(value){
+        this.setState({history:value});
     }
 
     render() {
@@ -145,7 +160,7 @@ class LoanCalculator extends React.Component {
                             {getFieldDecorator('mainsource', {
                                 rules: [{ required: true, message: 'Please select your employment status' }],
                             })(
-                                <Select onChange={this.handleOnChange} placeholder='please select your employment status'>
+                                <Select onChange={this.handleEmploymentStatus} placeholder='please select your employment status'>
                                 <Option value='great'>I'm employed by a company</Option>
                                 <Option value='good'>I'm retired and have Canada pention Plan</Option>
                                 <Option value='decent'>I'm on Employed Insurance currently</Option>
@@ -157,7 +172,7 @@ class LoanCalculator extends React.Component {
                             {getFieldDecorator('amount', {
                                 rules: [{ required: true, message: 'Please select your average income amount' }],
                             })(
-                                <Select onChange={this.handleOnChange} placeholder='please select your average income amount every two weeks'>
+                                <Select onChange={this.handleNetPay} placeholder='please select your average income amount every two weeks'>
                                 <Option value='great'>less than 1000</Option>
                                 <Option value='good'>1000-1500</Option>
                                 <Option value='decent'>1500-2000</Option>
@@ -169,7 +184,7 @@ class LoanCalculator extends React.Component {
                             {getFieldDecorator('status', {
                                 rules: [{ required: true, message: 'Please select your loan status' }],
                             })(
-                                <Select onChange={this.handleOnChange} placeholder='please select if you have loan with other company'>
+                                <Select onChange={this.handleHistory} placeholder='please select if you have loan with other company'>
                                 <Option value='great'>Yes,I have loan with other comany</Option>
                                 <Option value='good'>No, this is my first Payday Loan</Option>
                                 </Select>
