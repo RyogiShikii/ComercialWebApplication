@@ -1,13 +1,17 @@
 import React from 'react';
-import {Layout, Row, Col, Select, Form, Input, Checkbox, Icon, Button, Table} from 'antd';
+import {Layout, Row, Col, Select, Form, Card, Checkbox, Icon, Button, Table} from 'antd';
+import _ from 'lodash';
 
 class LoanCalculator extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            isToggle:false,
             employmentStatus:'',
             netPay:'',
-            history:''
+            history:'',
+            status:'',
+            amount:''
         }
         this.handleEmploymentStatus = this.handleEmploymentStatus.bind(this);
         this.handleNetPay = this.handleNetPay.bind(this);
@@ -18,12 +22,29 @@ class LoanCalculator extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
           if (!err) {
+              this.setState({isToggle:true});
             const {employmentStatus,netPay,history} = this.state;
             const tem = [employmentStatus,netPay,history];
             const score = tem.map(item => {
                 return parseInt(item)
             });
-            //import lodash sum here
+            const final = _.sum(score);
+            if(final<=15){
+                this.setState({
+                    status:'May Not Approve',
+                    amount:'200'
+                })
+            }else if(15 < final <= 45){
+                this.setState({
+                    status:'Approved',
+                    amount:'500'
+                })
+            }else{
+                this.setState({
+                    status:'Approved',
+                    amount:'1500'
+                })
+            }
           }
         });
     }
@@ -149,11 +170,28 @@ class LoanCalculator extends React.Component {
                 monthlyPay:'182.50%'
             }
         ];
-    
+        const {isToggle, status, amount} = this.state;
+        let result;
+        if(isToggle){
+            result = (
+                <Card title='Your estimate result'>
+                    <p>Based on the information you provided, other customers in same situation have been:</p>
+                    <p>{status}</p>
+                    <p>Loan amount from:</p>
+                    <p>{amount}</p>
+                </Card>
+            )
+        }else{
+            result = (
+                <Card title='Your estimate result'>
+                    <p>Please fill the form left to see the result.</p>
+                </Card>
+            )
+        }
         return (
             <Content>
                 <Row type="flex" justify="space-around">
-                    <Col sm={24} md={24} lg={10}>
+                    <Col xs={24} sm={24} md={24} lg={10}>
                         <h4>Payday Loan Eligibility Calculator</h4>
                         <Form onSubmit={this.handleSubmit} className="calculator-form">
                             <FormItem>
@@ -161,10 +199,10 @@ class LoanCalculator extends React.Component {
                                 rules: [{ required: true, message: 'Please select your employment status' }],
                             })(
                                 <Select onChange={this.handleEmploymentStatus} placeholder='please select your employment status'>
-                                <Option value='great'>I'm employed by a company</Option>
-                                <Option value='good'>I'm retired and have Canada pention Plan</Option>
-                                <Option value='decent'>I'm on Employed Insurance currently</Option>
-                                <Option value='improve'>Others</Option>
+                                <Option value='30'>I'm employed by a company or selfemployed</Option>
+                                <Option value='20'>I'm retired and have Canada pention Plan</Option>
+                                <Option value='10'>I'm on Employed Insurance currently</Option>
+                                <Option value='0'>Others</Option>
                                 </Select>
                             )}
                             </FormItem>
@@ -173,10 +211,10 @@ class LoanCalculator extends React.Component {
                                 rules: [{ required: true, message: 'Please select your average income amount' }],
                             })(
                                 <Select onChange={this.handleNetPay} placeholder='please select your average income amount every two weeks'>
-                                <Option value='great'>less than 1000</Option>
-                                <Option value='good'>1000-1500</Option>
-                                <Option value='decent'>1500-2000</Option>
-                                <Option value='improve'>2000+</Option>
+                                <Option value='5'>less than 1000</Option>
+                                <Option value='10'>1000-1500</Option>
+                                <Option value='20'>1500-2000</Option>
+                                <Option value='30'>2000+</Option>
                                 </Select>
                             )}
                             </FormItem>
@@ -185,8 +223,8 @@ class LoanCalculator extends React.Component {
                                 rules: [{ required: true, message: 'Please select your loan status' }],
                             })(
                                 <Select onChange={this.handleHistory} placeholder='please select if you have loan with other company'>
-                                <Option value='great'>Yes,I have loan with other comany</Option>
-                                <Option value='good'>No, this is my first Payday Loan</Option>
+                                <Option value='0'>Yes,I have loan with other comany</Option>
+                                <Option value='5'>No, this is my first Payday Loan</Option>
                                 </Select>
                             )}
                             </FormItem>
@@ -198,12 +236,12 @@ class LoanCalculator extends React.Component {
                             </FormItem>
                         </Form>
                     </Col>
-                    <Col sm={24} md={24} lg={8}>
-                        there will be a table
+                    <Col xs={24} sm={24} md={24} lg={8}>
+                        {result}
                     </Col>
                 </Row>
                 <Row type="flex" justify="space-around">
-                    <Col sm={24} md={24} lg={18}>
+                    <Col xs={24} sm={24} md={24} lg={18}>
                         <Table columns={columnPdl} dataSource={dataPdl}></Table>
                         <Table columns={columnApr} dataSource={dataApr}></Table>
                     </Col>

@@ -8,34 +8,41 @@ class HomeContent extends React.Component{
         const {Meta} = Card;
         return (
             <Content>
-                <Row>
-                    <Col sm={24} md={24} lg={24}>
+                <Row type="flex" justify="space-between">
+                    <Col xs={24} sm={24} md={24} lg={24}>
                         <div className='homeBackground'>
                             <h1>Payday Loans and Personal Loans</h1>
                             <h4>Efficency,Flexible and Convenience</h4>
                             <p><Button>Learn More</Button></p>
                         </div>
                     </Col>
-                    <Col sm={24} md={8} lg={8}>
+                    <Col xs={24} sm={24} md={8} lg={7}>
                         <Card
-                            cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-                            actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+                            className = 'serviceCard'
                         >
-                            <Meta
-                                title="Payday Loan"
-                                description="This is the description"
-                            />
+                            <h3>pdl</h3>
+                            <p>some description here</p>
+                            <p><Button>Learn more</Button></p>
                         </Card>
                     </Col>
-                    <Col sm={24} md={8} lg={8}>
+                    <Col xs={24} sm={24} md={8} lg={7}>
                         <Card
                             cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
                             actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
                         >
-                            <Meta
-                                title="Cash Cashing"
-                                description="This is the description"
-                            />
+                            <h3>Cash cc</h3>
+                            <p>some description here</p>
+                            <p><Button>Learn more</Button></p>
+                        </Card>
+                    </Col>
+                    <Col xs={24} sm={24} md={8} lg={7}>
+                        <Card
+                            cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
+                            actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+                        >
+                            <h3>others</h3>
+                            <p>some description here</p>
+                            <p><Button>Learn more</Button></p>
                         </Card>
                     </Col>
                 </Row>

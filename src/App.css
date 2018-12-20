@@ -85,3 +85,9 @@ below is the css for Apllication component
   background-image: url('./source/login-background.jpg');
   background-size:cover;
 }
+
+.serviceCard{
+  height:25em;
+  background-image: url('./source/abstract-attractive-backdrop-988872.jpg');
+  background-size:cover;
+}
