@@ -27,24 +27,25 @@
   to { transform: rotate(360deg); }
 }
 
-.ant-carousel .slick-slide {
-  text-align: center;
-  height: 160px;
-  line-height: 160px;
-  background: #000308;
-  overflow: hidden;
-}
-
-.ant-carousel .slick-slide h3 {
-  color: #fff;
-}
-
 .ant-layout-header {
   background-color: #eeeeee;
 }
 
 .ant-menu {
   background-color: #eeeeee;
+}
+
+/*
+below is the css for footer component
+*/
+
+.ant-layout-footer{
+  background-color:	#0000AA;
+  color:white;
+}
+
+.ant-layout-footer h5{
+  color:white;
 }
 
 .homeBackground{
