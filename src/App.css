@@ -85,10 +85,19 @@ below is the css for Apllication component
 .apllicationForm{
   background-image: url('./source/login-background.jpg');
   background-size:cover;
+  padding: 2em;
 }
 
-.serviceCard{
-  height:25em;
-  background-image: url('./source/abstract-attractive-backdrop-988872.jpg');
-  background-size:cover;
+/*
+this is css for LoanContent component
+*/
+.loanContentHeader{
+  text-align: center;
+  font-size: 150%;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+.ant-list-header{
+  background-color: #C0C0C0;
 }
