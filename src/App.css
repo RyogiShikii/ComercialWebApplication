@@ -54,6 +54,24 @@ below is the css for footer component
   height: 35em;
   text-align: center;
 }
+.serviceCard_1{
+  height:25em;
+  background-image: url('./source/serviceCard_1.jpg');
+  background-size:cover;
+  color: white;
+  text-align: center;
+}
+
+.serviceCard_2{
+  height:25em;
+  background-image: url('./source/serviceCard_2.jpg');
+  background-size:cover;
+}
+.serviceCard_3{
+  height:25em;
+  background-image: url('./source/serviceCard_3.jpg');
+  background-size:cover;
+}
 /*
 below is the css for FAQs component
 */
