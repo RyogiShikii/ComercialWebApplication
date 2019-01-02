@@ -18,7 +18,7 @@ class HomeContent extends React.Component{
                     </Col>
                     <Col xs={24} sm={24} md={8} lg={7}>
                         <Card
-                            className = 'serviceCard'
+                            className = 'serviceCard_1'
                         >
                             <h3>pdl</h3>
                             <p>some description here</p>
@@ -27,8 +27,7 @@ class HomeContent extends React.Component{
                     </Col>
                     <Col xs={24} sm={24} md={8} lg={7}>
                         <Card
-                            cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-                            actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+                            className='serviceCard_2'
                         >
                             <h3>Cash cc</h3>
                             <p>some description here</p>
@@ -37,8 +36,7 @@ class HomeContent extends React.Component{
                     </Col>
                     <Col xs={24} sm={24} md={8} lg={7}>
                         <Card
-                            cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-                            actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+                            className='serviceCard_3'
                         >
                             <h3>others</h3>
                             <p>some description here</p>

@@ -26,19 +26,9 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-.ant-carousel .slick-slide {
-  text-align: center;
-  height: 160px;
-  line-height: 160px;
-  background: #000308;
-  overflow: hidden;
-}
-
-.ant-carousel .slick-slide h3 {
-  color: #fff;
-}
-
+/*
+for HomeContent component
+*/
 .ant-layout-header {
   background-color: #eeeeee;
 }
@@ -52,6 +42,24 @@
   background-size: cover;
   height: 35em;
   text-align: center;
+}
+.serviceCard_1{
+  height:25em;
+  background-image: url('./source/serviceCard_1.jpg');
+  background-size:cover;
+  color: white;
+  text-align: center;
+}
+
+.serviceCard_2{
+  height:25em;
+  background-image: url('./source/serviceCard_2.jpg');
+  background-size:cover;
+}
+.serviceCard_3{
+  height:25em;
+  background-image: url('./source/serviceCard_3.jpg');
+  background-size:cover;
 }
 /*
 below is the css for FAQs component
@@ -86,8 +94,7 @@ below is the css for Apllication component
   background-size:cover;
 }
 
-.serviceCard{
-  height:25em;
-  background-image: url('./source/abstract-attractive-backdrop-988872.jpg');
-  background-size:cover;
-}
+
+/*
+for 
+*/
