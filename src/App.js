@@ -23,7 +23,7 @@ class App extends React.Component {
           </Header>
           <Route exact path="/" component={HomeContent} />
           <Route path="/loans" component={LoanContent} />
-          <Route path="/Rates" component={LoanCalculator} />
+          <Route path="/Rate" component={LoanCalculator} />
           <Route path='/FAQs' component={FAQ} />
           <Route path='/Login' component={Login} />
           <Route path='/Apply' component={Application} />

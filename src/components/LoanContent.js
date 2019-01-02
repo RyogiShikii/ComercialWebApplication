@@ -43,15 +43,13 @@ class LoanContent extends React.Component{
         return (
             <Content>
                 <Row type="flex" justify='center'>
-                    <Col sm={16} md={16} lg={16}>
-                        <div className="LoanBackground">
+                    <Col xs={16} sm={16} md={16} lg={16} className='loanContentHeader'>
                             <h1>The best financial solution you can have</h1>
-                            <p>Cashmart provide loans with lowest rate acrossing Canada</p>
-                        </div>
+                            <p>Cashmart provides loans with lowest rate acrossing Canada</p>
                     </Col>
                 </Row>
                 <Row type="flex" justify='space-around'>
-                    <Col sm={16} md={16} lg={8}>
+                    <Col xs={16} sm={16} md={16} lg={8}>
                         <List
                             header={<h3>What is a Payday Loan</h3>}
                             bordered={true}
@@ -68,7 +66,7 @@ class LoanContent extends React.Component{
                             )}
                         />
                     </Col>
-                    <Col sm={16} md={16} lg={8}>
+                    <Col xs={16} sm={16} md={16} lg={8}>
                         <List
                             header={<h3>What do I need to apply</h3>}
                             bordered={true}

@@ -26,15 +26,26 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-/*
-for HomeContent component
-*/
+
 .ant-layout-header {
   background-color: #eeeeee;
 }
 
 .ant-menu {
   background-color: #eeeeee;
+}
+
+/*
+below is the css for footer component
+*/
+
+.ant-layout-footer{
+  background-color:	#0000AA;
+  color:white;
+}
+
+.ant-layout-footer h5{
+  color:white;
 }
 
 .homeBackground{
@@ -92,9 +103,19 @@ below is the css for Apllication component
 .apllicationForm{
   background-image: url('./source/login-background.jpg');
   background-size:cover;
+  padding: 2em;
 }
 
-
 /*
-for 
+this is css for LoanContent component
 */
+.loanContentHeader{
+  text-align: center;
+  font-size: 150%;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+.ant-list-header{
+  background-color: #C0C0C0;
+}

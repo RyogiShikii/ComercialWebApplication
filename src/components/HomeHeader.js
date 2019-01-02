@@ -6,76 +6,46 @@ import {Row, Col} from 'antd';
 
 class HomeHeader extends React.Component{
     render(){
-        const headerMenu1 = (
-            <Menu>
-              <Menu.Item>
-                <Link to="/Loans">Loans</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/Rates">Rates</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to='/FAQs'>FAQs</Link>
-              </Menu.Item>
-            </Menu>
-          );
-
-        const headerMenu2 = (
-            <Menu>
-              <Menu.Item>
-                <Link to="/Login">Register</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/Apply">Apply</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to='/Location'>Location</Link>
-              </Menu.Item>
-            </Menu>
-          );
-        
-        const headerMenu3 = (
-            <Menu>
-              <Menu.Item>
-                <Link to="/Loans">Loans</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/Rates">Rates</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to='/FAQs'>FAQs</Link>
-              </Menu.Item>
-            </Menu>
-          );
-
         return(
             <Row>
                 <div className='header'>
-                    <Menu
-                        mode='horizontal'
-                    >
-                        <Col sm={24} md={6} lg={3}>
-                            <Menu.Item key="1">
-                                <Dropdown overlay={headerMenu1}>
-                                    <a className="ant-dropdown-link">Payday Loan</a>
-                                </Dropdown>
-                            </Menu.Item>
-                        </Col>
-                        <Col sm={24} md={6} lg={3}>
-                            <Menu.Item key="2">
-                                <Dropdown overlay={headerMenu2}>
-                                    <a className="ant-dropdown-link">Cheque Cashing</a>
-                                </Dropdown>
-                            </Menu.Item>
-                        </Col>
-                        <Col sm={24} md={6} lg={3}>
-                            <Menu.Item key="3">
-                                <Dropdown overlay={headerMenu3}>
-                                    <a className="ant-dropdown-link">Western Union</a>
-                                </Dropdown>
-                            </Menu.Item>
-                        </Col>
-                    </Menu>
+                <Menu
+                    mode="horizontal"
+                >
+                    <Menu.SubMenu title='Loan Service'>
+                        <Menu.Item key="0">
+                            <Link to='loans'>Payday Loan</Link>
+                        </Menu.Item>
+                        <Menu.Item key="1">
+                            <Link to='Rate'>Rate</Link>
+                        </Menu.Item>
+                        <Menu.Item key="2">
+                            <Link to='FAQs'>FAQs</Link>
+                        </Menu.Item>
+                    </Menu.SubMenu>
+                    <Menu.SubMenu title='Application'>
+                        <Menu.Item key='3'>
+                            <Link to='/Apply'>Apply Now</Link>
+                        </Menu.Item>
+                        <Menu.Item key='4'>
+                            <Link to='Login'>Login</Link>
+                        </Menu.Item>
+                    </Menu.SubMenu>
+                    <Menu.SubMenu title='About Company'>
+                        <Menu.Item key='6'>
+                            option
+                        </Menu.Item>
+                        <Menu.Item key='7'>
+                            option
+                        </Menu.Item>
+                        <Menu.Item key='8'>
+                            option
+                        </Menu.Item>
+                    </Menu.SubMenu>
+                    <Menu.Item>
+                        <Link to='Location'>Find Store</Link>
+                    </Menu.Item>
+                </Menu>
                 </div>
             </Row>
         );
