@@ -4,9 +4,9 @@ import {Layout, Row, Col, Avatar, List, Card, Icon, Button} from 'antd';
 class LoanContent extends React.Component{
     render() {
         const {Content} = Layout;
-        const infoData = [
+        const PayDayLoan = [
             {
-                title: 'Basic Info',
+                title: 'Basic Information',
                 description: 'A Payday Loan is a small sum loan, typically for a few hundred dollars to be repaid after a short period of time-usually,which can be a useful way to meet temporary short-term borrowing needs'
             },
             {
@@ -22,22 +22,22 @@ class LoanContent extends React.Component{
                 description: 'single payment(multiple payments only in BC)'
             },
           ];
-        const qulificationData = [
+        const PersonalLoan = [
             {
-                title: 'You must be 19 years or older',
-                description: ''
+                title: 'Basic Information',
+                description: 'In CashMart, we offer large amount loan for individuals.pleae contact us and our loan specialist will help you!'
             },
             {
-                title: 'A valid government issued ID',
-                description: 'such as Drivers license, Passport and PR card etc.'
+                title: 'Loan Terms',
+                description: 'basically 1 year bur can be flexible'
             },
             {
-                title: 'Up-to-date bank statement',
-                description: 'we need at least one month transactions history from the bank statement you provide'
+                title: 'Loan Amount',
+                description: 'Please call 604-688-6881 for details'
             },
             {
-                title: 'A void cheque or Pre-Authorized Debit Form',
-                description: 'This document should show all your bank account infomation'
+                title: 'Do I need a guarantee',
+                description: 'Yes.We need you to offer a gurantee.Please contact for more information'
             },
         ];
         return (
@@ -54,7 +54,7 @@ class LoanContent extends React.Component{
                             header={<h3>What is a Payday Loan</h3>}
                             bordered={true}
                             itemLayout="horizontal"
-                            dataSource={infoData}
+                            dataSource={PayDayLoan}
                             renderItem={item => (
                                 <List.Item>
                                     <List.Item.Meta
@@ -71,7 +71,7 @@ class LoanContent extends React.Component{
                             header={<h3>What do I need to apply</h3>}
                             bordered={true}
                             itemLayout="horizontal"
-                            dataSource={qulificationData}
+                            dataSource={PersonalLoan}
                             renderItem={item => (
                                 <List.Item>
                                     <List.Item.Meta

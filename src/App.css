@@ -48,29 +48,59 @@ below is the css for footer component
   color:white;
 }
 
+/*
+css for homeContent component
+*/
+
 .homeBackground{
   background-image: url('./source/accounting-alone-application-938965.jpg');
   background-size: cover;
   height: 35em;
   text-align: center;
 }
+
+.homeBackground p{
+  font-size: 150%;
+}
+
+.homeBackground h1{
+  font-size: 360%;
+}
+
 .serviceCard_1{
   height:25em;
   background-image: url('./source/serviceCard_1.jpg');
   background-size:cover;
   color: white;
-  text-align: center;
+}
+
+.serviceCard_1 h3{
+  color:white;
+  font-size:175%;
 }
 
 .serviceCard_2{
   height:25em;
   background-image: url('./source/serviceCard_2.jpg');
   background-size:cover;
+  color:white;
 }
+
+.serviceCard_2 h3{
+  color:white;
+  font-size:175%;
+}
+
 .serviceCard_3{
   height:25em;
   background-image: url('./source/serviceCard_3.jpg');
   background-size:cover;
+  color:white;
+}
+
+.serviceCard_3 h3{
+  color:white;
+  font-size:175%;
 }
 /*
 below is the css for FAQs component
