@@ -191,7 +191,7 @@ class LoanCalculator extends React.Component {
         return (
             <Content>
                 <Row type="flex" justify="space-around">
-                    <Col xs={24} sm={24} md={24} lg={10}>
+                    <Col xs={24} sm={24} md={24} lg={10} className='LoanCalculator'>
                         <h4>Payday Loan Eligibility Calculator</h4>
                         <Form onSubmit={this.handleSubmit} className="calculator-form">
                             <FormItem>
@@ -236,7 +236,7 @@ class LoanCalculator extends React.Component {
                             </FormItem>
                         </Form>
                     </Col>
-                    <Col xs={24} sm={24} md={24} lg={8}>
+                    <Col xs={24} sm={24} md={24} lg={8} className='CalculateResult'>
                         {result}
                     </Col>
                 </Row>

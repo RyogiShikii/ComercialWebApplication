@@ -68,7 +68,7 @@ class LoanContent extends React.Component{
                     </Col>
                     <Col xs={16} sm={16} md={16} lg={8}>
                         <List
-                            header={<h3>What do I need to apply</h3>}
+                            header={<h3>About Personal Loan</h3>}
                             bordered={true}
                             itemLayout="horizontal"
                             dataSource={PersonalLoan}
@@ -82,6 +82,45 @@ class LoanContent extends React.Component{
                                 </List.Item>
                             )}
                         />
+                    </Col>
+                    <Col xs={24} sm={24} md={16} lg={12} className='IconTable'>
+                        <h2>Why Choose CashMart?</h2>
+                        <Row type='flex' justify='space-around'>
+                            <Col xs={24} sm={24} md={12} lg={6}>
+                                <Icon type="safety" style={{'font-size':'300%'}}/>
+                            </Col>
+                            <Col xs={24} sm={24} md={12} lg={6}>
+                                <Icon type="check-circle" style={{'font-size':'300%'}}/>
+                            </Col>
+                            <Col xs={24} sm={24} md={12} lg={6}>
+                                <Icon type="smile" style={{'font-size':'300%'}}/>
+                            </Col>
+                            <Col xs={24} sm={24} md={12} lg={6}>
+                                <Icon type="heart" style={{'font-size':'300%'}}/>
+                            </Col>
+                        </Row>
+                        <Row type='flex' justify='space-around'>
+                            <Col xs={24} sm={24} md={12} lg={6}>
+                                <p>Secure</p>
+                            </Col>
+                            <Col xs={24} sm={24} md={12} lg={6}>
+                                <p>Lowest Fees</p>
+                            </Col>
+                            <Col xs={24} sm={24} md={12} lg={6}>
+                                <p>Convenient</p>
+                            </Col>
+                            <Col xs={24} sm={24} md={12} lg={6}>
+                                <p>Benefit</p>
+                            </Col>
+                        </Row>
+                        <Row type='flex' justify='space-around'>
+                            <Col xs={24} sm={24} md={16} lg={16}>
+                                <h3>For Payday Loans:</h3>
+                                <h5>Please call: 604-588-6977 or 1-844-588-6977</h5>
+                                <h3>For Personal Loans:</h3>
+                                <h5>Please call:604-688-6881</h5>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </Content>

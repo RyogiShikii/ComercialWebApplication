@@ -22,12 +22,15 @@ class HomeHeader extends React.Component{
                         <Menu.Item key="2">
                             <Link to='FAQs'>FAQs</Link>
                         </Menu.Item>
+                        <Menu.Item key="3">
+                            <Link to='/'>Home</Link>
+                        </Menu.Item>
                     </Menu.SubMenu>
                     <Menu.SubMenu title='Application'>
-                        <Menu.Item key='3'>
+                        <Menu.Item key='4'>
                             <Link to='/Apply'>Apply Now</Link>
                         </Menu.Item>
-                        <Menu.Item key='4'>
+                        <Menu.Item key='5'>
                             <Link to='Login'>Login</Link>
                         </Menu.Item>
                     </Menu.SubMenu>
