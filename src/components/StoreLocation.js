@@ -124,7 +124,6 @@ class StoreLocation extends React.Component{
                             <Option value="0">Surrey</Option>
                             <Option value="1">Vancouver</Option>
                         </Select>
-                        <br/>
                         <Input placeholder='please input your postcode or address' onChange={this.handleInput}></Input>
                         <Button type='primary' onClick={this.handleDirection}>Find Store</Button>
                     </Col>

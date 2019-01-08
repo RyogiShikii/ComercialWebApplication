@@ -241,7 +241,7 @@ class LoanCalculator extends React.Component {
                     </Col>
                 </Row>
                 <Row type="flex" justify="space-around">
-                    <Col xs={24} sm={24} md={24} lg={18}>
+                    <Col xs={24} sm={24} md={24} lg={18} className='rateTable'>
                         <Table columns={columnPdl} dataSource={dataPdl}></Table>
                         <Table columns={columnApr} dataSource={dataApr}></Table>
                     </Col>
