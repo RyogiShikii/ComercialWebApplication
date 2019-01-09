@@ -1,5 +1,5 @@
 import React from 'react';
-import {Collapse, Row, Col, Layout, Form, Input, Tooltip, Icon, Select, Checkbox, Button, AutoComplete} from 'antd';
+import {Collapse, Row, Col, Layout, Form, Input, Tooltip, Icon, Select, Checkbox, Button, AutoComplete, Alert} from 'antd';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -81,12 +81,15 @@ class Application extends React.Component {
         return (
             <Content>
                 <Row type="flex" justify="space-around" className='apllicationForm'>
-                    <Col sm={24} md={24} lg={22}>
+                    <Col xs={24} sm={24} md={24} lg={22}>
+                        <Alert message="The Online Application is currently not available" type="error" />
+                    </Col>
+                    <Col xs={24} sm={24} md={24} lg={22}>
                         <Form onSubmit={this.handleSubmit}>
                             <Collapse defaultActiveKey={['1']}>
                                 <Panel header="Personal Infomation" key="1">
                                     <Row gutter={8}>
-                                        <Col sm={24} md={24} lg={8}>
+                                        <Col xs={24} sm={24} md={24} lg={8}>
                                             <FormItem label="Last Name">
                                                 {getFieldDecorator('lastName', {
                                                     rules: [{
@@ -97,7 +100,7 @@ class Application extends React.Component {
                                                 )}
                                             </FormItem>
                                         </Col>
-                                        <Col sm={24} md={24} lg={8}>
+                                        <Col xs={24} sm={24} md={24} lg={8}>
                                             <FormItem label="First Name">
                                                 {getFieldDecorator('firstName', {
                                                     rules: [{
@@ -108,7 +111,7 @@ class Application extends React.Component {
                                                 )}
                                             </FormItem>
                                         </Col>
-                                        <Col sm={24} md={24} lg={8}>
+                                        <Col xs={24} sm={24} md={24} lg={8}>
                                             <FormItem label="Birth Day">
                                                 {getFieldDecorator('birthDay', {
                                                     rules: [{
@@ -211,7 +214,7 @@ class Application extends React.Component {
                                 </Panel>
                                 <Panel header="Bank Infomation" key="3">
                                     <Row gutter={8}>
-                                        <Col sm={24} md={24} lg={8}>
+                                        <Col xs={24} sm={24} md={24} lg={8}>
                                             <FormItem label="Transit Number">
                                                 {getFieldDecorator('transitNumber', {
                                                     rules: [{
@@ -222,7 +225,7 @@ class Application extends React.Component {
                                                 )}
                                             </FormItem>
                                         </Col>
-                                        <Col sm={24} md={24} lg={8}>
+                                        <Col xs={24} sm={24} md={24} lg={8}>
                                             <FormItem label="Insititution Number">
                                                 {getFieldDecorator('insititutionNumber', {
                                                     rules: [{
@@ -233,7 +236,7 @@ class Application extends React.Component {
                                                 )}
                                             </FormItem>
                                         </Col>
-                                        <Col sm={24} md={24} lg={8}>
+                                        <Col xs={24} sm={24} md={24} lg={8}>
                                             <FormItem label="Account Number">
                                                 {getFieldDecorator('accountNumber', {
                                                     rules: [{

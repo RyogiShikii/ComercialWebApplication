@@ -58,7 +58,7 @@ class LoanContent extends React.Component{
                             renderItem={item => (
                                 <List.Item>
                                     <List.Item.Meta
-                                        avatar={<Avatar icon='star'></Avatar>}
+                                        avatar={<Avatar icon='tags'></Avatar>}
                                         title={<p>{item.title}</p>}
                                         description={<p>{item.description}</p>}
                                     />
@@ -75,7 +75,7 @@ class LoanContent extends React.Component{
                             renderItem={item => (
                                 <List.Item>
                                     <List.Item.Meta
-                                        avatar={<Avatar icon='star'></Avatar>}
+                                        avatar={<Avatar icon='tags'></Avatar>}
                                         title={<p>{item.title}</p>}
                                         description={<p>{item.description}</p>}
                                     />

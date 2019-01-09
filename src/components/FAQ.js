@@ -10,7 +10,7 @@ class FAQ extends React.Component {
     }
     
     componentDidMount(){
-        fetch('https://5b3dae8d95bf8d0014a1d78a.mockapi.io/api/v1/FAQs')
+        fetch('http://5b3dae8d95bf8d0014a1d78a.mockapi.io/api/v1/FAQs')
         .then(response => response.json())
         .then(data => this.setState({info:data}));
     }
@@ -26,7 +26,7 @@ class FAQ extends React.Component {
         return (
             <Content>
                 <Row type="flex" justify="space-around">
-                    <Col sm={24} md={24} lg={20} className='collapseHolder'>
+                    <Col xs={24} sm={24} md={24} lg={20} className='collapseHolder'>
                         <h2>Still have questions about our services?</h2>
                         <Collapse accordion>
                             {collapse}

@@ -192,3 +192,17 @@ this is css for LoanContent component
 .ant-list-header{
   background-color: #C0C0C0;
 }
+
+/*
+css for storeLocation component
+*/
+.locationSelector{
+  text-align:center;
+  margin:0.5em;
+}
+
+.storeInfo{
+  background-color: #f0f0f0;
+  margin:0.5em;
+  box-shadow:#888888 0em 0em 0.5em;
+}

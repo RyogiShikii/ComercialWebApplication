@@ -115,17 +115,48 @@ class StoreLocation extends React.Component{
                 </MapWrapper>
             )
         }
+        let address;
+        if(city==0){
+            address = (
+                <Col xs={24} sm={24} md={24} lg={24} className='storeInfo'>
+                    <h2>Address</h2>
+                    <h4>10392b King George Blvd, Surrey, V3T 2W5</h4>
+                    <h2>Contact</h2>
+                    <h4>604-588-6977</h4>
+                    <h4>store701@mycashmart.com</h4>
+                    <h2>Business Hours</h2>
+                    <h4>Mon-Sat 8:30-20:00</h4>
+                    <h4>Sunday 11:00-18:00</h4>
+                </Col>
+            )
+        }else{
+            address = (
+                <Col xs={24} sm={24} md={24} lg={24} className='storeInfo'>
+                    <h2>Address</h2>
+                    <h4>2245 Commercial Drive,Vancouver, V5N 4B6</h4>
+                    <h2>Contact</h2>
+                    <h4>604-253-9698</h4>
+                    <h4>store702@mycashmart.com</h4>
+                    <h2>Business Hours</h2>
+                    <h4>Mon-Sat 9:00-20:00</h4>
+                    <h4>Sunday 10:00-17:00</h4>
+                </Col>
+            )
+        }
         return (
             <Content>
                 <Row type="flex" justify="space-around">
-                        <Col xs={24} sm={24} md={24} lg={5}>
+                    <Col xs={24} sm={24} md={24} lg={5} className='locationSelector'>
                         <h2>Please Select Your City:</h2>
-                        <Select defaultValue="surrey" style={{width:'18em'}} onChange={this.handleCityChange}> 
+                        <Select defaultValue="surrey" style={{width:'24em'}} onChange={this.handleCityChange}> 
                             <Option value="0">Surrey</Option>
                             <Option value="1">Vancouver</Option>
                         </Select>
                         <Input placeholder='please input your postcode or address' onChange={this.handleInput}></Input>
                         <Button type='primary' onClick={this.handleDirection}>Find Store</Button>
+                        <Row>
+                            {address}
+                        </Row>
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={15}>
                         {map}
