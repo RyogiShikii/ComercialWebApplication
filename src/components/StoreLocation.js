@@ -1,5 +1,5 @@
 import React from 'react';
-import {Layout, Row, Col, Select, Input, List, Card, Icon, Button, Table} from 'antd';
+import {Layout, Row, Col, Select, Input, Button} from 'antd';
 import MapWrapper from './MapWrapper';
 import {DirectionsRenderer, Marker, InfoWindow} from 'react-google-maps';
  
@@ -116,7 +116,7 @@ class StoreLocation extends React.Component{
             )
         }
         let address;
-        if(city==0){
+        if(city == 0){
             address = (
                 <Col xs={24} sm={24} md={24} lg={24} className='storeInfo'>
                     <h2>Address</h2>
@@ -153,7 +153,7 @@ class StoreLocation extends React.Component{
                             <Option value="1">Vancouver</Option>
                         </Select>
                         <Input placeholder='please input your postcode or address' onChange={this.handleInput}></Input>
-                        <Button type='primary' onClick={this.handleDirection}>Find Store</Button>
+                        <Button type='primary' onClick={this.handleDirection}>Get Direction</Button>
                         <Row>
                             {address}
                         </Row>

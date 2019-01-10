@@ -1,5 +1,5 @@
 import React from 'react';
-import {Layout, Row, Col, Select, Form, Card, Checkbox, Icon, Button, Table} from 'antd';
+import {Layout, Row, Col, Select, Form, Card, Button, Table} from 'antd';
 import _ from 'lodash';
 
 class LoanCalculator extends React.Component {
@@ -26,7 +26,7 @@ class LoanCalculator extends React.Component {
             const {employmentStatus,netPay,history} = this.state;
             const tem = [employmentStatus,netPay,history];
             const score = tem.map(item => {
-                return parseInt(item)
+                return parseInt(item,10);
             });
             const final = _.sum(score);
             if(final<=15){
@@ -34,7 +34,7 @@ class LoanCalculator extends React.Component {
                     status:'May Not Approve',
                     amount:'200'
                 })
-            }else if(15 < final <= 45){
+            }else if(15 << final <= 45){
                 this.setState({
                     status:'Approved',
                     amount:'500'

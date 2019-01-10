@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import { Layout} from 'antd';
 import HomeHeader from './components/HomeHeader';
 import HomeContent from './components/HomeContent';
@@ -14,13 +14,11 @@ import './App.css';
 
 class App extends React.Component {
   render() {
-    const {Header, Content, Footer} = Layout;
+    const {Footer} = Layout;
     return (
       <Router>
         <div>
-          <Header>
-            <HomeHeader />
-          </Header>
+          <HomeHeader />
           <Route exact path="/" component={HomeContent} />
           <Route path="/loans" component={LoanContent} />
           <Route path="/Rate" component={LoanCalculator} />

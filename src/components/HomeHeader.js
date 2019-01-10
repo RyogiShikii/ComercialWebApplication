@@ -1,20 +1,17 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Menu, Dropdown} from 'antd';
-import {Row, Col} from 'antd';
-
+import {Menu, Row} from 'antd';
 
 class HomeHeader extends React.Component{
     render(){
         return(
             <Row>
-                <div className='header'>
                 <Menu
                     mode="horizontal"
                 >
                     <Menu.SubMenu title='Loan Service'>
                         <Menu.Item key="0">
-                            <Link to='loans'>Payday Loan</Link>
+                            <Link to='loans'>Loan Service</Link>
                         </Menu.Item>
                         <Menu.Item key="1">
                             <Link to='Rate'>Rate</Link>
@@ -49,7 +46,6 @@ class HomeHeader extends React.Component{
                         <Link to='Location'>Find Store</Link>
                     </Menu.Item>
                 </Menu>
-                </div>
             </Row>
         );
     }

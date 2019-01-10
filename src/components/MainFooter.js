@@ -6,7 +6,7 @@ class MainFooter extends React.Component{
         return (
             <Row className='footer'>
                 <Col xs={18} sm={10} md={10} lg={10}>
-                    <h5>&copy; 2016 Cashmart Payday Loan Inc. All Rights Reserved.</h5>
+                    <h5>&copy; 2019 Cashmart Payday Loan Inc. All Rights Reserved.</h5>
                 </Col>
                 <Col xs={24} sm={24} md={24} lg={24}>
                     <p>

@@ -1,12 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Layout, Carousel} from 'antd';
-import {Row, Col, Card, Icon, Button} from 'antd';
+import {Layout, Row, Col, Card, Button} from 'antd';
 
 class HomeContent extends React.Component{
     render() {
         const {Content} = Layout;
-        const {Meta} = Card;
         return (
             <Content>
                 <Row type="flex" justify="space-between">

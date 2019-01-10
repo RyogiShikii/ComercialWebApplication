@@ -1,5 +1,5 @@
 import React from 'react';
-import {Layout, Row, Col, Avatar, List, Card, Icon, Button} from 'antd';
+import {Layout, Row, Col, Avatar, List, Icon} from 'antd';
 
 class LoanContent extends React.Component{
     render() {
