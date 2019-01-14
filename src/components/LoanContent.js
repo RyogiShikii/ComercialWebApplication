@@ -88,28 +88,18 @@ class LoanContent extends React.Component{
                         <Row type='flex' justify='space-around'>
                             <Col xs={24} sm={24} md={12} lg={6}>
                                 <Icon type="safety" style={{'font-size':'300%'}}/>
-                            </Col>
-                            <Col xs={24} sm={24} md={12} lg={6}>
-                                <Icon type="check-circle" style={{'font-size':'300%'}}/>
-                            </Col>
-                            <Col xs={24} sm={24} md={12} lg={6}>
-                                <Icon type="smile" style={{'font-size':'300%'}}/>
-                            </Col>
-                            <Col xs={24} sm={24} md={12} lg={6}>
-                                <Icon type="heart" style={{'font-size':'300%'}}/>
-                            </Col>
-                        </Row>
-                        <Row type='flex' justify='space-around'>
-                            <Col xs={24} sm={24} md={12} lg={6}>
                                 <p>Secure</p>
                             </Col>
                             <Col xs={24} sm={24} md={12} lg={6}>
+                                <Icon type="check-circle" style={{'font-size':'300%'}}/>
                                 <p>Lowest Fees</p>
                             </Col>
                             <Col xs={24} sm={24} md={12} lg={6}>
+                                <Icon type="smile" style={{'font-size':'300%'}}/>
                                 <p>Convenient</p>
                             </Col>
                             <Col xs={24} sm={24} md={12} lg={6}>
+                                <Icon type="heart" style={{'font-size':'300%'}}/>
                                 <p>Benefit</p>
                             </Col>
                         </Row>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Layout, Row, Col, Select, Form, Card, Button, Table} from 'antd';
+import {Link} from 'react-router-dom';
 import _ from 'lodash';
 
 class LoanCalculator extends React.Component {
@@ -232,7 +233,7 @@ class LoanCalculator extends React.Component {
                             <Button type="primary" htmlType="submit" className="login-form-button">
                                 Calculate
                             </Button>
-                            <a className="login-form-forgot" href="">Need more?Try personal solution</a>
+                            <Link to='/loans'>Need more?Try personal solution</Link>
                             </FormItem>
                         </Form>
                     </Col>

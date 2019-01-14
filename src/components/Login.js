@@ -1,5 +1,6 @@
 import React from 'react';
-import {Row, Col, Form, Icon, Input, Button, Checkbox} from 'antd'
+import {Row, Col, Form, Icon, Input, Button, Checkbox} from 'antd';
+import {Link} from 'react-router-dom';
 
 class Login extends React.Component {
     handleSubmit = (e) => {
@@ -41,11 +42,11 @@ class Login extends React.Component {
                             <Checkbox>Remember me</Checkbox>
                         )}
                         <br />
-                        <a className="login-form-forgot" href="">Forgot password</a><br />
+                        <Link to='/Apply'>Forget Password</Link><br />
                         <Button type="primary" htmlType="submit" className="login-form-button">
                             Log in
                         </Button>
-                        Or <a href="">register now!</a>
+                        Or <Link to='/Apply'>register now!</Link>
                         </FormItem>
                     </Form>
                 </Col>
