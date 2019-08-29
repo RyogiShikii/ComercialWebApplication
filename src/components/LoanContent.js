@@ -108,7 +108,7 @@ class LoanContent extends React.Component{
                                 <h3>For Payday Loans:</h3>
                                 <h5>Please call: 604-588-6977 or 1-844-588-6977</h5>
                                 <h3>For Personal Loans:</h3>
-                                <h5>Please call:604-688-6881</h5>
+                                <h5>Please call:1-844-588-6977</h5>
                             </Col>
                         </Row>
                     </Col>

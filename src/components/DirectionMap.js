@@ -1,5 +1,4 @@
 import React from 'react';
-import {Row, Col} from 'antd';
 import MapWrapper from './MapWrapper';
 import {DirectionsRenderer} from 'react-google-maps';
  
